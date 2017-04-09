@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		include parts/headtag.jade
+	body
+		main.wrapper
+			section.container
+				h3.title Login
+				form(action='',method='post')
+					fieldset
+						label(for='username') ユーザ名
+						input(type='text', name='username')
+						label(for='password') パスワード
+						input(type='password', name='password')
+						input(type='hidden', name='url', value!=url)
+						p(style="color:red;")!=error
+						input.button-primary(type='submit',value='login')
+			footer.footer
+				include parts/footertag.jade

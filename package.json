@@ -1,0 +1,32 @@
+{
+  "name": "sorenyokki",
+  "version": "1.0.0",
+  "description": "Freshman roster management application.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikaidoumari/SoreNyokki.git"
+  },
+  "keywords": [
+    "Roster",
+    "management"
+  ],
+  "author": "Hayato Doi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikaidoumari/SoreNyokki/issues"
+  },
+  "homepage": "https://github.com/nikaidoumari/SoreNyokki#readme",
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "jade": "^1.11.0",
+    "request": "^2.81.0",
+    "url": "^0.11.0"
+  }
+}

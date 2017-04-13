@@ -2,4 +2,4 @@
 /npm-debug.log
 /config.js
 /test.js
-/database/SoreNyokki.sqlite3
+/database/*

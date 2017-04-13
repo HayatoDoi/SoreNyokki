@@ -10,18 +10,18 @@ html
 					tbody
 						tr
 							td 名列番号
-							td!=column_number
+							td=column_number
 						tr
 							td 学籍番号
-							td!=studentid
+							td=studentid
 						tr
 							td 名前(ふりがな)
-							td!=lastname_hiragana
-							td!=firstname_hiragana
+							td=lastname_hiragana
+							td=firstname_hiragana
 						tr
 							td 名前(漢字)
-							td!=lastname_kanji
-							td!=firstname_kanji
+							td=lastname_kanji
+							td=firstname_kanji
 						tr
 							td Slack登録
 							if slack
@@ -31,13 +31,13 @@ html
 
 				form(action!=posturl,method='post')
 					fieldset
-						input(type='hidden', name='column_number', value!=column_number)
-						input(type='hidden', name='studentid', value!=studentid)
-						input(type='hidden', name='lastname_hiragana', value!=lastname_hiragana)
-						input(type='hidden', name='firstname_hiragana', value!=firstname_hiragana)
-						input(type='hidden', name='lastname_kanji', value!=lastname_kanji)
-						input(type='hidden', name='firstname_kanji', value!=firstname_kanji)
-						input(type='hidden', name='slack', value!=slack)
+						input(type='hidden', name='column_number', value=column_number)
+						input(type='hidden', name='studentid', value=studentid)
+						input(type='hidden', name='lastname_hiragana', value=lastname_hiragana)
+						input(type='hidden', name='firstname_hiragana', value=firstname_hiragana)
+						input(type='hidden', name='lastname_kanji', value=lastname_kanji)
+						input(type='hidden', name='firstname_kanji', value=firstname_kanji)
+						input(type='hidden', name='slack', value=slack)
 						input.button-primary(type='submit',value='登録')
 			footer.footer
 				include parts/footertag.jade

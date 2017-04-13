@@ -9,9 +9,6 @@ router.use((req, res, next) => {
 	const PATH = url.parse(req.originalUrl).pathname;
 
 	// Redirect to login form if no Admin. 
-	console.log('====admin page');
-	console.log(req.session.user);
-	console.log('====admin page');
 	if(req.session.user.name !== 'Admin'){
 		res.redirect(SERVER.ROOT);
 	}
@@ -37,6 +34,10 @@ router.get('/list.csv', (req, res) => {
 	const db = new DataBase(path.resolve(__dirname + '/../../database/SoreNyokki.sqlite3'));
 	let result = db.getData((rows)=>{
 		for(let i in rows){
+			for(key in rows[i]){
+				rows[i][key] = String(rows[i][key]).replace(/\,/g, '\,');
+				rows[i][key] = String(rows[i][key]).replace(/\"/g, '\"');
+			}
 			csv += rows[i].column_number + ',';
 			csv += rows[i].studentid + ',';
 			csv += rows[i].lastname_hiragana + ',';

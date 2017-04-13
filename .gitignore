@@ -1,2 +1,5 @@
 /node_modules
 /npm-debug.log
+/config.js
+/test.js
+/database/SoreNyokki.sqlite3

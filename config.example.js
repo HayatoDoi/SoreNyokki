@@ -1,7 +1,7 @@
 /* 
  * Application configuration file.
  * ===============================
- * File name : config.js
+ * File name : config.example.js
  * Author    : Hayato Doi
  * License   : MIT
  * ===============================
@@ -16,7 +16,7 @@
 module.exports = {
 	SERVER : {
 		PORT : 3000,
-		ROOT : "/api",
+		ROOT : '/ahou',
 		SESSION_SECRET : "60d0d99346f0dccb3310fc1fc99bea89e85bf79b77341dd618fdb6e2c6979a33",
 	},
 	USER : {
@@ -24,12 +24,11 @@ module.exports = {
 		GUEST_PASSWORD : "guest",
 	},
 	SLACK : {
-		// A page for acquiring token https://api.slack.com/custom-integrations/legacy-tokens
-		TOKEN : "xoxp-102447702628-102372103170-169280040087-dce7cde80d9a29d0d0dd27a6d32f7387",
+		// a page for acquiring token https://api.slack.com/custom-integrations/legacy-tokens
+		TOKEN : 'xoxp-102447702628-102372103170-165264575376-8d3a2df0756f4ec80e52ffe6465a2920',
 	},
 	MAIL : {
 		// Student id is assigned to (?).
 		FORMAT : "b(?)@planet.kanazawa-it.ac.jp",
 	},
-
 }

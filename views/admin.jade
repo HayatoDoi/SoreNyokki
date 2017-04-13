@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		include parts/headtag.jade
+	body
+		main.wrapper
+			section.container
+				h3.title 登録者一覧
+				a.button(href='./admin/list.csv') Download CSV
+				table
+					thead
+						tr
+							th 名列番号
+							th 学籍番号
+							th 名前(ふりがな)
+							th 名前(漢字)
+							th Slack登録
+					tbody
+						for row in ans
+							tr
+								td #{row.column_number}
+								td #{row.studentid}
+								td #{row.lastname_hiragana + " " + row.firstname_hiragana}
+								td #{row.lastname_kanji + " " + row.firstname_kanji}
+								if row.slack
+									td する
+								else
+									td しない
+			footer.footer
+				include parts/footertag.jade

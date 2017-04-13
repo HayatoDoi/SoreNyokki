@@ -45,6 +45,11 @@ const save = require('./save');
 router.use('/save', save);
 // data save __end
 
+// admin page __start
+const admin = require('./admin');
+router.use('/admin', admin);
+// admin page __end
+
 // Enter basic information __start
 router.get('/', (req, res) => {
 	res.render('index',{slack:'on'});

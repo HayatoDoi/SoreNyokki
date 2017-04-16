@@ -8,9 +8,9 @@ html
 				h3.title Welcome!!
 				form(action='',method='post')
 					fieldset
-						label(for='column_number') 名列番号(1EP1-99)
+						label(for='column_number') 名列番号 例:(1EP1-99)
 						input(type='text', name='column_number', value=column_number)
-						label(for='studentid') 学籍番号(例:1234567)
+						label(for='studentid') 学籍番号 例:(1234567)
 						input(type='text', name='studentid', value=studentid)
 						label(for='name') 名前
 							div
@@ -26,7 +26,7 @@ html
 						div
 							input(type='checkbox', name='slack', checked=slack)
 							label.label-inline(for='slack') Slackに参加する
-						p(style="color:red;")=error
+						p(style="color:red;")!=error
 						input.button-primary(type='submit',value='送信')
 			footer.footer
 				include parts/footertag.jade

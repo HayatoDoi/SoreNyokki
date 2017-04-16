@@ -44,7 +44,8 @@ router.get('/list.csv', (req, res) => {
 			csv += rows[i].firstname_hiragana + ',';
 			csv += rows[i].lastname_kanji + ',';
 			csv += rows[i].firstname_kanji + ',';
-			csv += rows[i].slack + '\n';
+			csv += rows[i].slack === 'on' ? 'on' : 'off';
+			csv += '\n';
 		}
 		res.header('Content-Type', 'text/csv');
 		res.send(csv);

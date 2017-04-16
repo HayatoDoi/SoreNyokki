@@ -31,7 +31,7 @@ module.exports = (data) => {
 	}
 	if(/^\d{1}[A-Z]{2}\d{1}-\d{1,2}$/.test(data.column_number) === false){
 		return {error : true,
-			message : '名列番号が間違っています.</br>半角数字1桁+半角英字2文字+ ハイフン + 半角数字1~2桁で入力してください.'};
+			message : '名列番号が間違っています.</br>半角数字1桁+半角英字2文字+半角数字1桁+ハイフン+半角数字1~2桁で入力してください.'};
 	}
 	if(/\d{7}/.test(data.studentid) === false){
 		return {error : true,

@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
 			( req.body.username === 'Admin' && req.body.password === USER.ADMIN_PASSWORD ) ){
 		console.log('正しいパスワード');
 		req.session.user = { name : req.body.username};
-		res.redirect(req.body.url)
+		res.redirect(req.protocol + '://' + req.get('host') + req.body.url)
 	}
 	else{
 		res.render('login',{ url : req.body.url, error : 'Password or Useruame is incorrect!!' });

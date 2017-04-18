@@ -8,3 +8,7 @@
 - npm run dbc
 - vim config.js
 - npm start
+
+#mamo
+- https://kit-secprj.slack.com/admin/invites
+

@@ -4,8 +4,21 @@ const path = require('path');
 const InviteSlack = require('../../module/InviteSlack');
 const GetMailAddress = require('../../module/GetMailAddress');
 const DataBase = require('../../module/DataBase');
+const Tokens = require("csrf");
+const tokens = new Tokens();
 
-router.post('/', (req, res) => {
+router.post('/',(req, res) => {
+	// token check _start
+	let secret = req.session._csrf;
+	let token = req.body._csrf;
+	if (tokens.verify(secret, token) === false) {
+		throw new Error('Invalid Token');
+	}
+	// token check _end
+	// clear token _start
+	req.session._csrf = null;
+	res.clearCookie("_csrf");
+	// clear token _end
 	if(req.body.slack === 'on'){
 		let mail = GetMailAddress(req.body.studentid);
 		console.log("Invent " + mail + " to Slack!!");

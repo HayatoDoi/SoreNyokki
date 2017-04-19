@@ -38,6 +38,7 @@ html
 						input(type='hidden', name='lastname_kanji', value=lastname_kanji)
 						input(type='hidden', name='firstname_kanji', value=firstname_kanji)
 						input(type='hidden', name='slack', value=slack)
+						input(type='hidden', name='_csrf', value=csrfToken)
 						input.button-primary(type='submit',value='登録')
 			footer.footer
 				include parts/footertag.jade

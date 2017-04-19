@@ -19,6 +19,8 @@
 const express = require('express');
 const router = express.Router();
 const url = require('url');
+const Tokens = require("csrf");
+const tokens = new Tokens();
 
 router.use((req, res, next) => {
 	const SERVER = require('../config').SERVER;
@@ -54,7 +56,11 @@ router.use('/admin', admin);
 router.get('/', (req, res) => {
 	res.render('index',{slack:'on'});
 });
-router.post('/', (req, res) => {
+router.post('/',(req, res) => {
+	let secret = tokens.secretSync();
+	let token = tokens.create(secret);
+	req.session._csrf = secret;
+	// res.cookie('_csrf', token);
 	// console.log(req.body);
 	const CheckPostData = require('../module/CheckPostData');
 	// Format check
@@ -67,8 +73,9 @@ router.post('/', (req, res) => {
 	}
 	else{
 		data = req.body;
-		data['posturl'] = req.originalUrl + '/save'
-		res.render('confirmation',req.body);
+		data['posturl'] = req.originalUrl + '/save';
+		data['csrfToken'] =token;
+		res.render('confirmation',data);
 	}
 });
 // Enter basic information __end

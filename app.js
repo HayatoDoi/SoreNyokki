@@ -45,9 +45,9 @@ app.use((req, res, next) => {
 	res.status(404).send('Not found!!');
 });
 // 500 error page
-// app.use((err, req, res, next) =>{
-// 	res.status(500).send('Internal server error!!');
-// });
+app.use((err, req, res, next) =>{
+	res.status(500).send('Internal server error!!');
+});
 // Server listen!
 app.listen(SERVER.PORT, () => {
 	console.log('Server running at http://localhost:%d%s', SERVER.PORT, SERVER.ROOT);

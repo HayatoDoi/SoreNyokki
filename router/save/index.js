@@ -22,7 +22,7 @@ router.post('/',(req, res) => {
 	if(req.body.slack === 'on'){
 		let mail = GetMailAddress(req.body.studentid);
 		console.log("Invent " + mail + " to Slack!!");
-		// InviteSlack(mail);
+		InviteSlack(mail);
 	}
 	const db = new DataBase(path.resolve(__dirname + '/../../database/SoreNyokki.sqlite3'));
 	let result = db.insertData(

@@ -7,11 +7,13 @@
  * ===============================
  *
  * -------------------------------
- * [ GET]/      | __Input_form__
- * [POST]/      | __Check_from_data__
- * [ GET]/login | __Login_page__
- * [POST]/login | __Make_session__
- * [POST]/save  | __save_post_data__
+ * [ GET]/               | __Input_form__
+ * [POST]/               | __Check_from_data__
+ * [ GET]/login          | __Login_page__
+ * [POST]/login          | __Make_session__
+ * [POST]/save           | __save_post_data__
+ * [ GET]/admin          | __Admin_page__
+ * [ GET]/admin/list.csv | __Download_csv__
  * -------------------------------
  *
  * Copyright (c) 2017, Hayato Doi
@@ -60,7 +62,6 @@ router.post('/',(req, res) => {
 	let secret = tokens.secretSync();
 	let token = tokens.create(secret);
 	req.session._csrf = secret;
-	// res.cookie('_csrf', token);
 	// console.log(req.body);
 	const CheckPostData = require('../module/CheckPostData');
 	// Format check

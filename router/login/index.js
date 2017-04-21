@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
 	// Guest,Admin login
 	if( ( req.body.username === 'Guest' && req.body.password === USER.GUEST_PASSWORD ) || 
 			( req.body.username === 'Admin' && req.body.password === USER.ADMIN_PASSWORD ) ){
-		console.log('正しいパスワード');
+		console.log('Correct password');
 		req.session.user = { name : req.body.username};
 		res.redirect(req.protocol + '://' + req.get('host') + req.body.url)
 	}

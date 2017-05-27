@@ -49,6 +49,7 @@ https://api.slack.com/custom-integrations/legacy-tokens
 [バグ・脆弱性報告ページ](https://github.com/nikaidoumari/SoreNyokki/issues/2) または Hayato Doiに直接報告してください
 
 ### 修正したバグ・脆弱性
+- [2017-05-27] 学籍番号の正規表現が効かないのを修正
 - [2017-04-13] CSVに特殊文字が入ってた時,表示が乱れるのを修正
 - [2017-04-13] 確認画面のXSSを修正
 - [2017-04-17] ログイン後に任意webページにリダイレクトされるバグを修正

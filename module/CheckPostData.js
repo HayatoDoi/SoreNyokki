@@ -33,7 +33,7 @@ module.exports = (data) => {
 		return {error : true,
 			message : '名列番号が間違っています.</br>半角数字1桁+半角英字2文字+半角数字1桁+ハイフン+半角数字1~2桁で入力してください.'};
 	}
-	if(/\d{7}/.test(data.studentid) === false){
+	if(/^\d{7}$/.test(data.studentid) === false){
 		return {error : true,
 			message : '学籍番号が間違っています.</br>半角数字7桁で入力してください.'};
 	}
